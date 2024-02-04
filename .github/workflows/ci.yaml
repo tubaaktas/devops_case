@@ -38,9 +38,14 @@ jobs:
     - name: Set image tag
       run: |
         sed -i 's|__TAG__|"${{ env.TAG }}"|g' k8s/deployment.yaml
+    - name: Install doctl
+      uses: digitalocean/action-doctl@v2
+      with:
+        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
     - name: Apply k8s resources
       run: |
         kubectl apply -f k8s/deployment.yaml k8s/service.yaml
+      
 
 
 
