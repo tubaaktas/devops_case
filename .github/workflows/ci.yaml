@@ -37,7 +37,7 @@ jobs:
         kubectl-version: v1.22.0
     - name: Set image tag
       run: |
-        sed -i 's/__TAG__/${{ env.TAG }}/g' k8s/deployment.yaml
+        sed -i "s/__TAG__/${{ env.TAG }}/g" k8s/deployment.yaml
     - name: Apply k8s resources
       run: |
         kubectl apply -f k8s/deployment.yaml k8s/service.yaml
