@@ -17,3 +17,5 @@ spec:
         image: __TAG__
         ports:
         - containerPort: 5000
+      imagePullSecrets:
+        - name: regcred
