@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flower-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flower-app
+  template:
+    metadata:
+      labels:
+        app: flower-app
+    spec:
+      containers:
+      - name: flower-app-container
+        image: __TAG__
+        ports:
+        - containerPort: 5000
