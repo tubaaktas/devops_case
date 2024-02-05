@@ -1,50 +1,29 @@
-## Proje Hakkında
+# Devops Entry Project
 
-Devops_case, DevOps pratiklerini deneyimlemek amacıyla oluşturduğum ilk projemdir. Bu proje, basit bir "Hello World" HTML dosyasını bir DevOps yapısı kullanarak yayınlamayı içerir.
+This project demonstrates the integration of DevOps practices for continuous integration, containerization with Docker, and deployment using Kubernetes. It's structured to provide a streamlined approach for development and deployment processes.
 
-## Başlarken
+## How to develop?
 
-Bu bölüm, projeyi yerel sistemde nasıl kurup çalıştıracağınızı adım adım açıklar.
+1. fork the repo
+2. digital ocean accec token set DIGITALOCEAN_ACCESS_TOKEN
+3. digital ocean accec token set KUBECONFIG
+4. digital ocean accec token set PAT
+5. ```bash
+git push
+``` 🚀
 
-### Önkoşullar
+## Continues Integration
 
-Projeyi çalıştırmak için gerekli araçlar ve yazılımlar:
+This section explains how to **build** and **deploy** the project automatically, utilizing CI tools to ensure code quality and automate testing and deployment.
 
-- Git
-- Herhangi bir metin editörü veya IDE (VSCode, Sublime Text, vb.)
-- Terminal veya Komut İstemi
+## Declarative Kubernetes Resources
 
-### Projeyi İndirme
+Kubernetes resources for this project are defined declaratively, including configurations for deployment and service management. These can be found in the `k8s` directory, facilitating easy and predictable deployments.
 
-Projeyi indirmek için aşağıdaki Git komutunu kullanın:
-git clone https://github.com/tubaaktas/devops_case.git
+## Containerization with Docker
 
+Defined the shortest way to build the application's container in the [Dockerfile](https://github.com/tubaaktas/devops_case/blob/main/Dockerfile).
 
-Bu komut, `Devops_case` projenizi yerel bilgisayarınıza klonlar.
-
-### Kurulum
-
-Bu projenin kurulumu için özel bir adım gerekmemektedir. HTML dosyasını herhangi bir web tarayıcısında açabilir veya bir HTTP sunucusu üzerinden servis edebilirsiniz.
-
-### Kullanım
-
-Projeyi çalıştırmak için:
-
-1. Klonladığınız projenin dizinine gidin.
-2. HTML dosyasını bir web tarayıcısında açın veya bir HTTP sunucusu kullanarak yayınlayın.
-
-Örneğin, Python ile basit bir HTTP sunucusu başlatmak için:
-
-python -m http.server
-
-
-Bu komut, mevcut dizinde bir HTTP sunucusu başlatır ve HTML dosyanızı tarayıcınızda `http://localhost:5000` adresinden erişilebilir hale getirir.
-
-## Katkıda Bulunma
-
-Bu proje, DevOps pratiklerini öğrenmek ve deneyimlemek amacıyla kişisel bir projedir. Ancak, herhangi bir öneri, soru veya katkıda bulunmak isterseniz, lütfen bir sorun (issue) açın veya bir çekme isteği (pull request) gönderin.
-
-
-
-
-
+- Python:3.10-slim-buster is used for smaller image size, optimizing download and startup times of containers.
+- Used `CMD` instead of `ENTRYPOINT` to simplify command execution without the need for a shell script.
+- Employed multiple `COPY` commands to leverage the Docker build layer cache, enhancing build performance and efficiency.
