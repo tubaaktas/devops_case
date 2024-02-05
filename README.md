@@ -9,8 +9,7 @@ This project demonstrates the integration of DevOps practices for continuous int
 3. digital ocean accec token set KUBECONFIG
 4. digital ocean accec token set PAT
 5. ```bash
-git push
-``` 🚀
+git push``` 🚀
 
 ## Continues Integration
 
