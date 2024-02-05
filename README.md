@@ -5,9 +5,9 @@ This project demonstrates the integration of DevOps practices for continuous int
 ## How to develop?
 
 1. fork the repo
-2. Digital Ocean Accec token set DIGITALOCEAN_ACCESS_TOKEN ((../<repository_name>/settings/secrets/actions))
-3. Connect to Kubernetes cluster token set KUBECONFIG ((../<repository_name>/settings/secrets/actions))
-4. Personal Access Token set PAT ((../<repository_name>/settings/secrets/actions))
+2. Digital Ocean Accec token set DIGITALOCEAN_ACCESS_TOKEN (../<repository_name>/settings/secrets/actions)
+3. Connect to Kubernetes cluster token set KUBECONFIG (../<repository_name>/settings/secrets/actions)
+4. Personal Access Token set PAT (../<repository_name>/settings/secrets/actions)
 5. ```git push``` 🚀
 
 ## Continues Integration
